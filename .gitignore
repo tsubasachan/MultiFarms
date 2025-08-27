@@ -24,6 +24,8 @@ ENV/
 
 build/
 dist/
+frameworks/
+dependences/
 **/build/
 **/dist/
 *.egg-info/
