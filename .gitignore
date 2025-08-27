@@ -22,10 +22,16 @@ ENV/
 *.sublime-project
 *.sublime-workspace
 
-build/
-dist/
+build/*
+dist/*
 frameworks/*
 dependences/*
+!build/.gitkeep
+!dist/.gitkeep
+!frameworks/.gitkeep
+!dependences/.gitkeep
+
+
 **/build/
 **/dist/
 *.egg-info/
