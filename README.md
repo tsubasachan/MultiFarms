@@ -1,6 +1,6 @@
 # MultiFarms
 
-MultiFarms is a mod for Stardew Valley that allows managing multiple farms in a dynamic and fun way.
+MultiFarms is a mod for Stardew Valley that allows you to manage multiple farms, you can choose between 4, 8, 12 or 16 Farms
 
 ## Requirements
 
