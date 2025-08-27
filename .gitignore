@@ -26,7 +26,6 @@ build/*
 dist/*
 frameworks/*
 dependences/*
-!build/.gitkeep
 !dist/.gitkeep
 !frameworks/.gitkeep
 !dependences/.gitkeep
