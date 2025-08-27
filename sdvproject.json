@@ -1,0 +1,10 @@
+{
+    "defaultProject": "MultiFarms",
+    "mods_path": null,
+    "projects": {
+        "MultiFarms": {
+            "path": "MultiFarms",
+            "framework": "ContentPatcher"
+        }
+    }
+}
