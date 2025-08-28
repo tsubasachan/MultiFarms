@@ -4,7 +4,7 @@ from StardewValley import Manifest
 manifest=Manifest(
     Name="MultiFarms",
     Author="alichan",
-    Version="0.0.2",
+    Version="0.4",
     Description="Add multi Farms to Stardew Valley",
     UniqueID="alichan.MultiFarms"
 )
