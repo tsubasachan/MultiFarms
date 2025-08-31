@@ -1,4 +1,5 @@
-from StardewValley import Manifest, Helper, ContentPatcher
+from re import I
+from StardewValley import EditData, Manifest, Helper, ContentPatcher
 
 from Maps.Maps import Maps
 
@@ -14,6 +15,18 @@ class ModEntry(Helper):
         # Add your contents here
         Maps(self)
 
+        self.content.registryContentData(
+            EditData(
+                LogName="Enable GreenHouses",
+                Target="Data/Buildings",
+                Fields={
+                    "Greenhouse":{
+                        "Builder":"Robin",
+                        "BuildCondition":"PLAYER_HAS_MAIL Host ccPantry,BUILDINGS_CONSTRUCTED Target Cabin,CAN_BUILD_FOR_CABINS Greenhouse" 
+                    }
+                }
+            )
+        )
         
 
         

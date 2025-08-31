@@ -5,6 +5,8 @@ from StardewValley.Data.XNA import Position
 
 from Maps.MultiFarms import MultiFarms
 
+from Maps.MixFarms import MixFarms
+
 class Maps(MapsModel):
     def __init__(self, mod: Helper):
         super().__init__(mod)
@@ -36,6 +38,11 @@ class Maps(MapsModel):
         MultiFarms(
             maps=self,
             mapName="SixteenFarms"
+        )
+
+        MixFarms(
+            maps=self,
+            mapName="Mix_Farm"
         )
 
 
