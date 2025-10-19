@@ -1,11 +1,10 @@
 from StardewValley.Data.SVModels import Maps as MapsModel
-from StardewValley import Helper, EditMap, ToArea, MapTiles, EditData, WarpPosition
+from StardewValley import Helper, EditMap, WarpPosition
+from regex import E
 
-from StardewValley.Data.XNA import Position
+from Maps.MultiFarms import FourFarms, EightFarms, TwelveFarms, SixteenFarms
 
-from Maps.MultiFarms import MultiFarms
-
-from Maps.MixFarms import MixFarms
+from Maps.MixFarms import Default, Combat, Island, Fishing, Foraging, Mining, Ranching, MineCarts
 
 class Maps(MapsModel):
     def __init__(self, mod: Helper):
@@ -20,31 +19,55 @@ class Maps(MapsModel):
     def contents(self):
         super().contents()
 
-        MultiFarms(
-            maps=self,
-            mapName="FourFarms"
+        FourFarms(
+            maps=self
         )
 
-        MultiFarms(
-            maps=self,
-            mapName="EightFarms"
+        EightFarms(
+            maps=self
         )
 
-        MultiFarms(
-            maps=self,
-            mapName="TwelveFarms"
+        TwelveFarms(
+            maps=self
         )
 
-        MultiFarms(
-            maps=self,
-            mapName="SixteenFarms"
+        SixteenFarms(
+            maps=self
+        )
+        
+
+        Default(
+            maps=self
         )
 
-        MixFarms(
-            maps=self,
-            mapName="Mix_Farm"
+        Island(
+            maps=self
         )
 
+        Combat(
+            maps=self
+        )
+
+        Fishing(
+            maps=self
+        )
+
+        Foraging(
+            maps=self
+        )
+
+        Mining(
+            maps=self
+        )
+
+        Ranching(
+            maps=self
+        )
+
+        MineCarts(
+            maps=self
+        )
+        
 
         self.mod.content.registryContentData(
             EditMap(
@@ -54,17 +77,15 @@ class Maps(MapsModel):
                     WarpPosition(9, 22, "Farm", 350, 17),
                     WarpPosition(9, 23, "Farm", 350, 17),
                     WarpPosition(9, 24, "Farm", 350, 17)                    
-                ]
+                ],
+                When={
+                    "FarmName": "FourFarms,EightFarms,TwelveFarms,SixteenFarms"
+                }
             ),
             contentFile=self.__class__.__name__
         )
 
-        forestWarp={
-            "FourFarms":(0, 76),
-            "EightFarms":(0, 136),
-            "TwelveFarms":(0, 196),
-            "SixteenFarms":(0, 256)
-        }
+        from Maps.MultiFarms.data import forestWarp
         
         for farmName, (x, y) in forestWarp.items():
             self.mod.content.registryContentData(
@@ -85,3 +106,7 @@ class Maps(MapsModel):
                 ),
                 contentFile=self.__class__.__name__
             )
+        
+        MineCarts(
+            maps=self
+        )

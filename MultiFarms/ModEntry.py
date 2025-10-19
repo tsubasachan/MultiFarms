@@ -1,4 +1,3 @@
-from re import I
 from StardewValley import EditData, Manifest, Helper, ContentPatcher
 
 from Maps.Maps import Maps
@@ -22,8 +21,11 @@ class ModEntry(Helper):
                 Fields={
                     "Greenhouse":{
                         "Builder":"Robin",
-                        "BuildCondition":"PLAYER_HAS_MAIL Host ccPantry,BUILDINGS_CONSTRUCTED Target Cabin,CAN_BUILD_FOR_CABINS Greenhouse" 
+                        "BuildCondition":"IS_MULTIPLAYER,BUILDINGS_CONSTRUCTED Target Cabin,CAN_BUILD_FOR_CABINS Greenhouse" 
                     }
+                },
+                When={
+                    "HasFlag: hostPlayer": "ccPantry"
                 }
             )
         )
